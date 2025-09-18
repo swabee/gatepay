@@ -17,7 +17,7 @@ async function startPayment() {
   }
 
   // Redirect URL with query params
-  const redirectUrl = `http://127.0.0.1:5500/gateway-html/status.html?username=${encodeURIComponent(username)}&vehicle=${encodeURIComponent(vehicleNumber)}&fuel=${encodeURIComponent(fuelType)}&days=${encodeURIComponent(days)}&amount=${encodeURIComponent(amount)}&userId=${encodeURIComponent(userId)}`;
+  const redirectUrl = `https://swabee.github.io/gatepay/status.html?username=${encodeURIComponent(username)}&vehicle=${encodeURIComponent(vehicleNumber)}&fuel=${encodeURIComponent(fuelType)}&days=${encodeURIComponent(days)}&amount=${encodeURIComponent(amount)}&userId=${encodeURIComponent(userId)}`;
 
   // Payment payload
   const payload = {
