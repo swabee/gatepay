@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Status</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f6f8fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 20px;
+      min-height: 100vh;
+    }
+    h1 {
+      color: green;
+      margin-bottom: 20px;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+    .row {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    .success {
+      color: green;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>GatePay</h1>
+  <div class="success">✅ Payment Success</div>
+  <div class="card">
+    <div class="row">Username: <span id="username"></span></div>
+    <div class="row">Vehicle: <span id="vehiclenumber"></span></div>
+    <div class="row">Fuel: <span id="fueltype"></span></div>
+    <div class="row">Days: <span id="days"></span></div>
+    <div class="row">Amount: ₹<span id="amount"></span></div>
+    <div class="row">User ID: <span id="userId"></span></div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById("username").textContent = params.get("username") || "";
+    document.getElementById("vehiclenumber").textContent = params.get("vehicle") || "";
+    document.getElementById("fueltype").textContent = params.get("fuel") || "";
+    document.getElementById("days").textContent = params.get("days") || "";
+    document.getElementById("amount").textContent = params.get("amount") || "";
+    document.getElementById("userId").textContent = params.get("userId") || "";
+  </script>
+</body>
+</html>
